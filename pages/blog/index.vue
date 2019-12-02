@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-flex>
-      <main>
+      <section>
         <v-sheet class="ma-0" color="primary lighten-2" dark tile>
           <h1 class="headline pa-2" display="headline">Blog ></h1>
         </v-sheet>
@@ -26,7 +26,7 @@
             </v-card>
           </v-list-item>
         </v-list>
-      </main>
+      </section>
     </v-flex>
   </v-layout>
 </template>
@@ -40,29 +40,25 @@ export default {
 }
 </script>
 <style lang="scss">
-main {
-  .v-list {
-    display: flex;
-    flex-direction: column;
+.v-list {
+  display: flex;
+  flex-direction: column;
 
-    .v-list-item {
-      margin-bottom: 2rem;
-    }
+  .v-list-item {
+    margin-bottom: 2rem;
   }
 }
 
 @media screen and (min-width: 768px) {
-  main {
-    .v-list {
-      align-items: flex-start;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-      gap: 2rem;
+  .v-list {
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 2rem;
 
-      .v-list-item {
-        margin-bottom: 0;
-      }
+    .v-list-item {
+      margin-bottom: 0;
     }
   }
 }
