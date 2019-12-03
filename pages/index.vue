@@ -7,7 +7,7 @@
           <v-img
             class="white--text align-center"
             alt="hero description"
-            height="70vh"
+            height="400px"
             src="/images/hero-md.jpg"
             lazy-src="https://picsum.photos/1280/720"
             srcset="/images/hero-lg.jpg 768w, /images/hero-xl.jpg 1024w"
@@ -121,6 +121,7 @@ export default {
       v => !!v || 'E-mail is required',
       v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
     ],
+    message: '',
     messageRules: [
       v => !!v || 'Message is required',
       v =>
@@ -165,10 +166,6 @@ p:first-of-type {
 }
 
 main {
-  & > section:nth-child(odd) {
-    background-color: #eee;
-    margin: 0;
-  }
   & > .container:nth-child(odd) {
     background-color: #eee;
     margin: 0;
@@ -176,6 +173,14 @@ main {
     padding: 2rem;
   }
 }
+
+// sections
+
+.container {
+  min-height: 400px;
+}
+
+// hero section
 
 #hero {
   .v-responsive__content {
@@ -186,12 +191,6 @@ main {
     justify-content: space-evenly;
     position: relative;
   }
-}
-
-// sections
-
-.container {
-  min-height: 70vh;
 }
 
 // client section
@@ -205,6 +204,7 @@ main {
   min-width: 100%;
   .v-sheet {
     background: none;
+    width: 90vw;
   }
 }
 
@@ -240,7 +240,7 @@ main {
   padding: 4rem 0;
 
   form {
-    margin: 4rem auto;
+    margin: 4rem;
   }
 }
 
@@ -315,7 +315,6 @@ a {
     justify-content: space-around;
     justify-content: space-evenly;
     padding: 4rem;
-    min-height: 70vh;
 
     & > * {
       margin: 1rem 0;
