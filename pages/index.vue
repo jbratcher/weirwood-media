@@ -3,14 +3,53 @@
     <v-flex>
       <main>
         <!-- Hero Section -->
-        <section id="hero" class="py-12">
-          <h1 class="display-1 pl-12">Hero Section</h1>
+        <section id="hero">
+          <v-card class="text-center">
+            <v-img
+              class="white--text align-center"
+              alt="hero description"
+              height="70vh"
+              src="/images/hero-md.jpg"
+              lazy-src="https://picsum.photos/1280/720"
+              srcset="/images/hero-lg.jpg 768w, /images/hero-xl.jpg 1024w"
+              cover
+            >
+              <section class="gradient-overlay"></section>
+              <v-card-title class="text-center">Witty headline</v-card-title>
+              <v-card-subtitle
+                class="subtitle white--text text-center"
+              >A subtitle to expand on the headline.</v-card-subtitle>
+            </v-img>
+          </v-card>
         </section>
 
         <!-- Benefits Section -->
-        <section id="benefits" class="py-12">
-          <h1 class="display-1 pl-12">Benefits Section</h1>
-        </section>
+        <v-container>
+          <v-row id="benefits">
+            <v-col class="text-center">
+              <h2 class="text-light">Services</h2>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-container class="grid-3-1">
+              <v-card>
+                <v-icon class="benefits-icon" color="primary lighten-2">mdi-toolbox-outline</v-icon>
+                <v-card-title>1st Service</v-card-title>
+                <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+              </v-card>
+              <v-card>
+                <v-icon class="benefits-icon" color="primary">mdi-email-send</v-icon>
+                <v-card-title>2nd Service</v-card-title>
+                <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+              </v-card>
+              <v-card>
+                <v-icon class="benefits-icon" color="primary darken-2">mdi-account-supervisor</v-icon>
+                <v-card-title>3rd Service</v-card-title>
+                <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+              </v-card>
+            </v-container>
+          </v-row>
+        </v-container>
 
         <!-- About Section -->
         <section id="about" class="py-12">
@@ -45,37 +84,109 @@ export default {
 
 <style lang="scss">
 main {
-  .container {
-    min-height: 100vh;
-  }
-
   & > section:nth-child(odd) {
     background-color: #eee;
   }
 }
 
-.title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: bold;
-  font-size: 3.2rem;
-  color: #35495e;
-  letter-spacing: 1px;
+#hero {
+  .v-responsive__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    position: relative;
+    .v-card__title {
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 2rem;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+// sections
+
+h2 {
+  font-size: 2.33rem;
 }
+
+.v-card__title {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 2.33rem;
+  font-weight: 700;
+  line-height: 1.125em;
+}
+
+.v-card__subtitle {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 1.33rem;
+}
+
 a {
   font-weight: bold;
   color: #526488;
 }
-.deploy-button {
-  margin-top: 1rem;
+
+.gradient-overlay {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.7)
+  );
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.text-light {
+  font-weight: 100;
+}
+
+.grid-3-1 {
+  display: flex;
+  flex-direction: column;
+  max-width: 85vw;
+  & > .v-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    & > .v-icon {
+      font-size: 4rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 4rem;
+  }
+  .v-card__title {
+    font-size: 5rem;
+  }
+  .v-card__subtitle {
+    font-size: 2.5rem;
+  }
+  .grid-3-1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 100%;
+
+    & > .v-card {
+      margin-bottom: unset;
+
+      & > .v-icon {
+        font-size: 8rem;
+      }
+
+      & > .v-card__title {
+        font-size: 2rem;
+      }
+    }
+  }
 }
 </style>

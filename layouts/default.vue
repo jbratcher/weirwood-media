@@ -12,9 +12,18 @@
       prominent
       height="70px"
     >
-      <v-toolbar-title class="headline align-self-center" v-text="title" />
+      <v-toolbar-title class="headline align-self-center">
+        <v-img
+          class="white--text align-center"
+          alt="logo description"
+          src="/images/logo.png"
+          lazy-src="/images/logo.png"
+          width="200px"
+        />
+      </v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" />
+      <!-- tablet/desktop header navigation -->
       <MenuLinks
         :general-links="generalLinks"
         list-class="row hidden-md-and-down"
@@ -102,12 +111,27 @@ export default {
         },
         {
           icon: 'mdi-post',
+          title: 'Services',
+          to: '/services'
+        },
+        {
+          icon: 'mdi-post',
           title: 'Blog',
           to: '/blog'
+        },
+        {
+          icon: 'mdi-account-supervisor',
+          title: 'About',
+          to: '/about'
+        },
+        {
+          icon: 'mdi-email-send',
+          title: 'Contact',
+          to: '/contact'
         }
       ],
       miniVariant: false,
-      title: 'Nuxt Netlify CMS'
+      title: 'Company Name'
     }
   }
 }
@@ -122,9 +146,10 @@ export default {
   padding: 0;
 }
 
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+html,
+body,
+.v-application {
+  font-family: 'Libre Franklin', sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -132,15 +157,17 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-}
-
-html,
-body {
   overflow-x: hidden;
 }
 
 .v-application a {
   color: #fff !important;
+}
+
+header {
+  .v-image__image {
+    filter: invert(1);
+  }
 }
 
 .v-list-item.row-menu {
