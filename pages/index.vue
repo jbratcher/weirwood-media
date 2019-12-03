@@ -3,26 +3,22 @@
     <v-flex>
       <main>
         <!-- Hero Section -->
-        <section id="hero">
-          <v-card class="text-center">
-            <v-img
-              class="white--text align-center"
-              alt="hero description"
-              height="70vh"
-              src="/images/hero-md.jpg"
-              lazy-src="https://picsum.photos/1280/720"
-              srcset="/images/hero-lg.jpg 768w, /images/hero-xl.jpg 1024w"
-              cover
-            >
-              <section class="gradient-overlay"></section>
-              <v-card-title class="text-center">Witty headline</v-card-title>
-              <v-card-subtitle
-                class="subtitle white--text text-center"
-              >A subtitle to expand on the headline.</v-card-subtitle>
-              <v-btn color="white" outlined>View Our Portfolio</v-btn>
-            </v-img>
-          </v-card>
-        </section>
+        <v-container id="hero" class="pa-0">
+          <v-img
+            class="white--text align-center"
+            alt="hero description"
+            height="70vh"
+            src="/images/hero-md.jpg"
+            lazy-src="https://picsum.photos/1280/720"
+            srcset="/images/hero-lg.jpg 768w, /images/hero-xl.jpg 1024w"
+            cover
+          >
+            <section class="gradient-overlay"></section>
+            <h2 class="text-center">Witty headline</h2>
+            <p class="subtitle white--text text-center">A subtitle to expand on the headline.</p>
+            <v-btn color="white" outlined>View Our Portfolio</v-btn>
+          </v-img>
+        </v-container>
 
         <!-- Client List Section -->
         <v-container id="clients">
@@ -78,14 +74,31 @@
         </v-container>
 
         <!-- About Section -->
-        <section id="about" class="py-12">
-          <h1 class="display-1 pl-12">About Section</h1>
-        </section>
+        <v-container id="about">
+          <h2 class="text-center">We are the best at what we do</h2>
+          <p class="text-center">We've been doing this since the year we were founded</p>
+          <p>My philosophy is basically this, and this is something I live by and I always have and I always will. Don't ever, for any reason, do anything, to anyone, for any reason, ever, no matter what, no matter where, or who, or who you are with, or where you are going, or where you've been, ever, for any reason whatsoever.</p>
+        </v-container>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-12">
-          <h1 class="display-1 pl-12">Contact Section</h1>
-        </section>
+        <v-container id="contact">
+          <h2 class="text-center">Let Us Help With Your Next Project</h2>
+          <p class="text-center">Drop us a line</p>
+          <v-form ref="form" v-model="valid" lazy-validation>
+            <v-text-field v-model="name" :rules="nameRules" label="Name" required></v-text-field>
+            <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+            <v-textarea v-model="message" :rules="messageRules" label="Your Message" required></v-textarea>
+            <v-select
+              v-model="select"
+              :items="items"
+              :rules="[v => !!v || 'Item is required']"
+              label="Request Type"
+              required
+            ></v-select>
+            <v-btn color="error" class="mr-4" @click="reset">Reset</v-btn>
+            <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Submit</v-btn>
+          </v-form>
+        </v-container>
       </main>
     </v-flex>
   </v-layout>
@@ -99,8 +112,35 @@ export default {
     Logo
   },
   data: () => ({
-    sliderModel: null
+    sliderModel: null,
+    valid: true,
+    name: '',
+    nameRules: [v => !!v || 'Name is required'],
+    email: '',
+    emailRules: [
+      v => !!v || 'E-mail is required',
+      v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+    ],
+    messageRules: [
+      v => !!v || 'Message is required',
+      v =>
+        (v && v.length <= 1000) ||
+        'Your message must be less than 1000 characters. Please email us at company@email.com'
+    ],
+    select: null,
+    items: ['Item 1', 'Item 2', 'Item 3', 'Item 4']
   }),
+  methods: {
+    validate() {
+      if (this.$refs.form.validate()) {
+        this.snackbar = true
+      }
+    },
+    reset() {
+      this.$refs.form.reset()
+      this.$refs.form.resetValidation()
+    }
+  },
   head() {
     return {
       script: [
@@ -112,6 +152,18 @@ export default {
 </script>
 
 <style lang="scss">
+h2 {
+  font-size: 2.33rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+p:first-of-type {
+  font-weight: 100;
+  font-size: 1.5rem;
+}
+
 main {
   & > section:nth-child(odd) {
     background-color: #eee;
@@ -133,24 +185,23 @@ main {
     height: 100%;
     justify-content: space-evenly;
     position: relative;
-    .v-card__title {
-      display: flex;
-      justify-content: center;
-    }
   }
 }
 
 // sections
 
-h2 {
-  font-size: 2.33rem;
-  position: relative;
-  z-index: 1;
+.container {
+  min-height: 70vh;
 }
 
 // client section
 
 #clients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  justify-content: space-evenly;
   min-width: 100%;
   .v-sheet {
     background: none;
@@ -172,6 +223,24 @@ h2 {
     z-index: 0;
     top: 0;
     left: 0;
+  }
+}
+
+// about section
+
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  padding: 4rem 2rem;
+}
+
+#contact {
+  padding: 4rem 0;
+
+  form {
+    margin: 4rem auto;
   }
 }
 
@@ -210,6 +279,8 @@ a {
   font-weight: 100;
 }
 
+// Benefit Icons Grid
+
 .grid-3-1 {
   display: flex;
   flex-direction: column;
@@ -229,14 +300,40 @@ a {
 
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 3rem;
+    font-size: 4.5rem;
   }
-  .v-card__title {
-    font-size: 5rem;
+
+  p:first-of-type {
+    font-size: 2.33rem;
   }
-  .v-card__subtitle {
-    font-size: 2.5rem;
+
+  // about section
+
+  #about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    padding: 4rem;
+    min-height: 70vh;
+
+    & > * {
+      margin: 1rem 0;
+    }
+
+    h2 {
+      font-size: 4.5rem;
+      font-weight: 700;
+    }
+
+    & > p:first-of-type {
+      font-size: 1.5rem;
+      font-weight: 100;
+    }
   }
+
+  // Benefits Icons Grid
+
   .grid-3-1 {
     display: flex;
     flex-direction: row;
@@ -255,6 +352,22 @@ a {
       & > .v-card__title {
         font-size: 2rem;
       }
+    }
+  }
+
+  // contact section
+
+  #contact {
+    h2 {
+      font-size: 3rem;
+      padding: 0 10vw;
+    }
+    p:first-of-type {
+      font-size: 2rem;
+    }
+    form {
+      margin: 4rem auto;
+      width: 50vw;
     }
   }
 }
