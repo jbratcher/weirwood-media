@@ -7,12 +7,12 @@
       v-for="(item, i) in generalLinks"
       :key="i + `-${item.title}`"
       :to="item.to"
-      :class="listItemClass"
+      :class="listItemClass + ' px-2'"
       dark
       router
       exact
     >
-      <v-list-item-action>
+      <v-list-item-action class="mr-2">
         <v-icon>{{ item.icon }}</v-icon>
       </v-list-item-action>
       <v-list-item-content>

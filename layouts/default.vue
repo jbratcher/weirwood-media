@@ -110,7 +110,7 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-post',
+          icon: 'mdi-toolbox-outline',
           title: 'Services',
           to: '/services'
         },

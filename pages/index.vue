@@ -19,18 +19,44 @@
               <v-card-subtitle
                 class="subtitle white--text text-center"
               >A subtitle to expand on the headline.</v-card-subtitle>
+              <v-btn color="white" outlined>View Our Portfolio</v-btn>
             </v-img>
           </v-card>
         </section>
 
+        <!-- Client List Section -->
+        <v-container id="clients">
+          <h2 class="text-light text-center">Look At All Our Clients</h2>
+          <v-sheet>
+            <v-slide-group v-model="sliderModel" class="pa-4" center-active show-arrows>
+              <v-slide-item v-for="n in 9" :key="n" v-slot:default="{ active, toggle }">
+                <v-card
+                  :color="active ? 'primary' : 'grey lighten-1'"
+                  class="ma-4"
+                  height="100"
+                  width="200"
+                  @click="toggle"
+                >
+                  <v-row class="fill-height" align="start" justify="end">
+                    <v-scale-transition>
+                      <v-icon v-if="active" class="mt-2 mr-4" color="white" size="24"></v-icon>
+                    </v-scale-transition>
+                  </v-row>
+                </v-card>
+              </v-slide-item>
+            </v-slide-group>
+          </v-sheet>
+        </v-container>
+
         <!-- Benefits Section -->
-        <v-container>
-          <v-row id="benefits">
+        <v-container id="benefits">
+          <v-row>
             <v-col class="text-center">
-              <h2 class="text-light">Services</h2>
+              <h2 class="text-light white--text">Services</h2>
             </v-col>
           </v-row>
           <v-row>
+            <section class="gradient-overlay"></section>
             <v-container class="grid-3-1">
               <v-card>
                 <v-icon class="benefits-icon" color="primary lighten-2">mdi-toolbox-outline</v-icon>
@@ -72,6 +98,9 @@ export default {
   components: {
     Logo
   },
+  data: () => ({
+    sliderModel: null
+  }),
   head() {
     return {
       script: [
@@ -86,6 +115,13 @@ export default {
 main {
   & > section:nth-child(odd) {
     background-color: #eee;
+    margin: 0;
+  }
+  & > .container:nth-child(odd) {
+    background-color: #eee;
+    margin: 0;
+    min-width: 100%;
+    padding: 2rem;
   }
 }
 
@@ -108,6 +144,35 @@ main {
 
 h2 {
   font-size: 2.33rem;
+  position: relative;
+  z-index: 1;
+}
+
+// client section
+
+#clients {
+  min-width: 100%;
+  .v-sheet {
+    background: none;
+  }
+}
+
+// benefits section
+
+#benefits {
+  background-image: url('/images/background.svg');
+  background-size: cover;
+  position: relative;
+
+  .gradient-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+  }
 }
 
 .v-card__title {
@@ -137,6 +202,8 @@ a {
   position: absolute;
   width: 100%;
   z-index: -1;
+  top: 0;
+  left: 0;
 }
 
 .text-light {
@@ -162,7 +229,7 @@ a {
 
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .v-card__title {
     font-size: 5rem;
@@ -171,13 +238,15 @@ a {
     font-size: 2.5rem;
   }
   .grid-3-1 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-content: space-evenly;
     max-width: 100%;
 
     & > .v-card {
       margin-bottom: unset;
+      margin: 0 2rem;
 
       & > .v-icon {
         font-size: 8rem;
