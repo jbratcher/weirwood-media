@@ -58,10 +58,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    '@nuxtjs/markdownit',
-    '@nuxtjs/vuetify',
-  ],
+  buildModules: [],
   /*
    ** Nuxt.js modules
    */
