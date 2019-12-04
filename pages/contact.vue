@@ -5,13 +5,21 @@
       <section class="gradient-overlay"></section>
       <h2 class="text-center white--text">Let Us Help With Your Next Project</h2>
       <p class="text-center white--text mt-5">Drop us a line!</p>
-      <v-form ref="form" v-model="valid" lazy-validation>
-        <v-text-field class="white--text" v-model="name" :rules="nameRules" label="Name" required></v-text-field>
+      <v-form ref="form" v-model="valid" name="contact" method="post" netlify lazy-validation>
+        <v-text-field
+          class="white--text"
+          v-model="name"
+          :rules="nameRules"
+          label="Name"
+          name="name"
+          required
+        ></v-text-field>
         <v-text-field
           class="white--text"
           v-model="email"
           :rules="emailRules"
           label="E-mail"
+          name="email"
           required
         ></v-text-field>
         <v-textarea
@@ -19,6 +27,7 @@
           v-model="message"
           :rules="messageRules"
           label="Your Message"
+          name="message"
           required
         ></v-textarea>
         <v-select
@@ -27,6 +36,7 @@
           :items="items"
           :rules="[v => !!v || 'Item is required']"
           label="Request Type"
+          name="select"
           required
         ></v-select>
         <v-btn color="secondary" class="mr-4" @click="reset">Reset</v-btn>

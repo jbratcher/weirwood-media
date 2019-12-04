@@ -14,9 +14,9 @@
             cover
           >
             <section class="gradient-overlay"></section>
-            <v-sheet>
+            <v-sheet class="image-text">
               <h2 class="text-center white--text">Web &amp; App Development</h2>
-              <p class="subtitle text-center white--text">Let's make your ideas a reality.</p>
+              <p class="text-center white--text">Let's make your ideas a reality.</p>
             </v-sheet>
             <v-btn color="white" outlined>View Our Portfolio</v-btn>
           </v-img>
@@ -65,12 +65,13 @@
           <section class="gradient-overlay"></section>
           <h2 class="text-center white--text">Let Us Help With Your Next Project</h2>
           <p class="text-center white--text mt-5">Drop us a line!</p>
-          <v-form ref="form" v-model="valid" lazy-validation>
+          <v-form ref="form" v-model="valid" name="contact" method="post" netlify lazy-validation>
             <v-text-field
               class="white--text"
               v-model="name"
               :rules="nameRules"
               label="Name"
+              name="name"
               required
             ></v-text-field>
             <v-text-field
@@ -78,6 +79,7 @@
               v-model="email"
               :rules="emailRules"
               label="E-mail"
+              name="email"
               required
             ></v-text-field>
             <v-textarea
@@ -85,6 +87,7 @@
               v-model="message"
               :rules="messageRules"
               label="Your Message"
+              name="message"
               required
             ></v-textarea>
             <v-select
@@ -93,6 +96,7 @@
               :items="items"
               :rules="[v => !!v || 'Item is required']"
               label="Request Type"
+              name="select"
               required
             ></v-select>
             <v-btn color="secondary" class="mr-4" @click="reset">Reset</v-btn>
@@ -152,6 +156,10 @@ h2 {
   font-weight: 700;
   position: relative;
   z-index: 1;
+}
+
+.image-text p {
+  font-size: 1.75rem;
 }
 
 // sections
@@ -302,6 +310,10 @@ a {
     font-size: 3.5rem;
   }
 
+  .image-text p {
+    font-size: 1.75rem;
+  }
+
   // about section
 
   #about {
@@ -323,8 +335,12 @@ a {
     }
 
     & > p:first-of-type {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: 100;
+    }
+
+    p {
+      font-size: 1.25rem;
     }
   }
 
