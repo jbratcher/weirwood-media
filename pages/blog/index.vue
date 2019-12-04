@@ -1,8 +1,8 @@
 <template>
   <v-layout>
     <v-flex>
-      <section>
-        <v-sheet class="ma-0" color="#484848" dark tile>
+      <section class="blog-container">
+        <v-sheet class="ma-0" color="primary lighten-2" dark tile>
           <h1 class="headline pa-2" display="headline">Blog ></h1>
         </v-sheet>
         <v-list>
@@ -40,7 +40,7 @@ export default {
 };
 </script>
 <style lang="scss">
-main {
+.blog-container {
   .v-list {
     display: flex;
     flex-direction: column;
@@ -52,13 +52,14 @@ main {
 }
 
 @media screen and (min-width: 768px) {
-  main {
+  .blog-container {
     .v-list {
       align-items: flex-start;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       gap: 2rem;
+      padding: 2rem;
 
       .v-list-item {
         margin-bottom: 0;

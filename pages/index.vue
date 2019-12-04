@@ -60,13 +60,33 @@
 
         <!-- Contact Section -->
         <v-container id="contact">
-          <h2 class="text-center">Let Us Help With Your Next Project</h2>
-          <p class="text-center">Drop us a line</p>
+          <section class="gradient-overlay"></section>
+          <h2 class="text-center white--text">Let Us Help With Your Next Project</h2>
+          <p class="text-center white--text">Drop us a line</p>
           <v-form ref="form" v-model="valid" lazy-validation>
-            <v-text-field v-model="name" :rules="nameRules" label="Name" required></v-text-field>
-            <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
-            <v-textarea v-model="message" :rules="messageRules" label="Your Message" required></v-textarea>
+            <v-text-field
+              class="white--text"
+              v-model="name"
+              :rules="nameRules"
+              label="Name"
+              required
+            ></v-text-field>
+            <v-text-field
+              class="white--text"
+              v-model="email"
+              :rules="emailRules"
+              label="E-mail"
+              required
+            ></v-text-field>
+            <v-textarea
+              class="white--text"
+              v-model="message"
+              :rules="messageRules"
+              label="Your Message"
+              required
+            ></v-textarea>
             <v-select
+              class="white--text"
               v-model="select"
               :items="items"
               :rules="[v => !!v || 'Item is required']"
@@ -83,12 +103,7 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue';
-
 export default {
-  components: {
-    Logo
-  },
   data: () => ({
     valid: true,
     name: '',
@@ -155,6 +170,7 @@ main {
 
 .container {
   min-height: 400px;
+  padding: 4rem 0;
 }
 
 // hero section
@@ -202,14 +218,6 @@ main {
   padding: 4rem 2rem;
 }
 
-#contact {
-  padding: 4rem 0;
-
-  form {
-    margin: 4rem;
-  }
-}
-
 .v-card__title {
   font-family: 'Libre Franklin', sans-serif;
   font-size: 2.33rem;
@@ -227,6 +235,39 @@ main {
 a {
   font-weight: bold;
   color: #526488;
+}
+
+// contact section
+
+#contact {
+  background-image: url('/images/contact-form-background-rotated.svg');
+  background-size: cover;
+  background-position: center;
+  min-width: 100%;
+  padding: 4rem 0;
+  position: relative;
+
+  .gradient-overlay {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+  }
+
+  p:first-of-type {
+    position: relative;
+  }
+
+  form {
+    background: #fff;
+    border-radius: 0.25rem;
+    padding: 4rem;
+    position: relative;
+    width: 80vw;
+  }
 }
 
 .gradient-overlay {
@@ -284,6 +325,7 @@ a {
     flex-direction: column;
     justify-content: space-around;
     justify-content: space-evenly;
+    min-height: 600px;
     padding: 4rem;
 
     & > * {
@@ -308,7 +350,6 @@ a {
     align-items: stretch;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    max-width: 100%;
 
     & > .v-card {
       margin-bottom: unset;
@@ -335,6 +376,7 @@ a {
       font-size: 2rem;
     }
     form {
+      background: #fff;
       margin: 4rem auto;
       width: 50vw;
     }

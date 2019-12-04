@@ -2,13 +2,27 @@
   <main>
     <!-- Contact Section -->
     <v-container id="contact">
-      <h2 class="text-center">Let Us Help With Your Next Project</h2>
-      <p class="text-center">Drop us a line</p>
+      <section class="gradient-overlay"></section>
+      <h2 class="text-center white--text">Let Us Help With Your Next Project</h2>
+      <p class="text-center white--text">Drop us a line</p>
       <v-form ref="form" v-model="valid" lazy-validation>
-        <v-text-field v-model="name" :rules="nameRules" label="Name" required></v-text-field>
-        <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
-        <v-textarea v-model="message" :rules="messageRules" label="Your Message" required></v-textarea>
+        <v-text-field class="white--text" v-model="name" :rules="nameRules" label="Name" required></v-text-field>
+        <v-text-field
+          class="white--text"
+          v-model="email"
+          :rules="emailRules"
+          label="E-mail"
+          required
+        ></v-text-field>
+        <v-textarea
+          class="white--text"
+          v-model="message"
+          :rules="messageRules"
+          label="Your Message"
+          required
+        ></v-textarea>
         <v-select
+          class="white--text"
           v-model="select"
           :items="items"
           :rules="[v => !!v || 'Item is required']"
