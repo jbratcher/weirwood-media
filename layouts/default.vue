@@ -46,7 +46,7 @@
       <nuxt />
     </v-content>
     <!-- Footer Area -->
-    <v-footer color="rgb(30,30,30)" class="pa-0">
+    <v-footer color="#484848" class="pa-0">
       <v-row justify="center" no-gutters>
         <v-btn
           v-for="(link, i) in footerLinks"
@@ -58,7 +58,7 @@
         >{{ link.title }}</v-btn>
         <v-col class="black lighten-2 py-4 text-center white--text" cols="12">
           {{ new Date().getFullYear() }} —
-          <strong>Company Name</strong>
+          <strong>Weirwood Media</strong>
         </v-col>
       </v-row>
     </v-footer>
@@ -137,6 +137,11 @@ export default {
 </script>
 
 <style lang="scss">
+.theme--light.v-sheet,
+.v-application .black {
+  border-bottom-color: pink;
+}
+
 *,
 *:before,
 *:after {

@@ -2,7 +2,7 @@
   <v-layout>
     <v-flex>
       <section>
-        <v-sheet class="ma-0" color="primary lighten-2" dark tile>
+        <v-sheet class="ma-0" color="#484848" dark tile>
           <h1 class="headline pa-2" display="headline">Blog ></h1>
         </v-sheet>
         <v-list>
@@ -34,10 +34,10 @@
 export default {
   computed: {
     blogPosts() {
-      return this.$store.state.blogPosts
+      return this.$store.state.blogPosts;
     }
   }
-}
+};
 </script>
 <style lang="scss">
 main {

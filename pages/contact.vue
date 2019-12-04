@@ -15,8 +15,8 @@
           label="Request Type"
           required
         ></v-select>
-        <v-btn color="error" class="mr-4" @click="reset">Reset</v-btn>
-        <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Submit</v-btn>
+        <v-btn color="secondary" class="mr-4" @click="reset">Reset</v-btn>
+        <v-btn :disabled="!valid" color="primary" class="mr-4" @click="validate">Submit</v-btn>
       </v-form>
     </v-container>
   </main>

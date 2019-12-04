@@ -1,4 +1,6 @@
-# Nuxt, Vuetify, & Netlify CMS Starter Kit
+# Wwirwood Media
+
+## A digital media company specialing in user experience
 
 A simple repo to add Vueity and blog functionality to [Nuxt & Netlify CMS Starter](https://github.com/renestalder/nuxt-netlify-cms-starter-template)
 
@@ -64,3 +66,5 @@ This project comes with Netlify CMS ready to rumble, and a basic blog configurat
 1. In your browser, naviage to `localhost:3000/admin`.
 2. Login via your chosen method.
 3. You will be redirectd to the dashboard where you can create and manage posts
+
+* To change netlify deploy url, run localStorage.removeItem("netlifySiteURL") in the browser console.

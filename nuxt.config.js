@@ -58,7 +58,10 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: [
+    '@nuxtjs/markdownit',
+    '@nuxtjs/vuetify',
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -68,6 +71,17 @@ export default {
   ],
   markdownit: {
     injected: true
+  },
+  vuetify: {
+    theme: {
+      dark: false,
+      themes: {
+        light: {
+          primary: '#212121',
+          secondary: '#d50000',
+        }
+      }
+    }
   },
   /*
    ** Build configuration

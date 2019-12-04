@@ -15,7 +15,7 @@
           >
             <section class="gradient-overlay"></section>
             <v-sheet>
-              <h2 class="text-center white--text">Web &amp; Application Development</h2>
+              <h2 class="text-center white--text">Web &amp; App Development</h2>
               <p class="subtitle text-center white--text">Let's make your ideas a reality.</p>
             </v-sheet>
             <v-btn color="white" outlined>View Our Portfolio</v-btn>
@@ -33,17 +33,17 @@
             <section class="gradient-overlay"></section>
             <v-container class="grid-3-1">
               <v-card>
-                <v-icon class="benefits-icon" color="primary lighten-2">mdi-toolbox-outline</v-icon>
-                <v-card-title>Application Development</v-card-title>
+                <v-icon class="benefits-icon" color="secondary lighten-2">mdi-toolbox-outline</v-icon>
+                <v-card-title>App Development</v-card-title>
                 <v-card-text>Have a great idea but not sure how to implement it? Let us show you all the modern options available and what is the best fit for your use case.</v-card-text>
               </v-card>
               <v-card>
-                <v-icon class="benefits-icon" color="primary">mdi-email-send</v-icon>
+                <v-icon class="benefits-icon" color="secondary">mdi-email-send</v-icon>
                 <v-card-title>Web Development</v-card-title>
-                <v-card-text>Get your idea online and portable. Our solutions cater to exactly what you need depending on what you want. Let us create universal, fast website or application for you.</v-card-text>
+                <v-card-text>Get your idea online and portable. Our solutions cater to exactly what you need depending on what you want. Let us create universal, fast website or app for you.</v-card-text>
               </v-card>
               <v-card>
-                <v-icon class="benefits-icon" color="primary darken-2">mdi-account-supervisor</v-icon>
+                <v-icon class="benefits-icon" color="secondary darken-2">mdi-account-supervisor</v-icon>
                 <v-card-title>Social Media Integration</v-card-title>
                 <v-card-text>Make your internet presence known and stand out with our social media management service.</v-card-text>
               </v-card>
@@ -55,7 +55,7 @@
         <v-container id="about">
           <h2 class="text-center">We care about providing cutting-edge, quality work</h2>
           <p class="text-center">Crafting amazing software and web apps is our passion</p>
-          <p>We understand people and how they interact with screens. Our process builds blazingly fast, modern applications with user experience in mind from the ground up.</p>
+          <p>We understand people and how they interact with screens. Our process builds blazingly fast, modern apps with user experience in mind from the ground up.</p>
         </v-container>
 
         <!-- Contact Section -->
@@ -73,8 +73,8 @@
               label="Request Type"
               required
             ></v-select>
-            <v-btn color="error" class="mr-4" @click="reset">Reset</v-btn>
-            <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Submit</v-btn>
+            <v-btn color="secondary" class="mr-4" @click="reset">Reset</v-btn>
+            <v-btn :disabled="!valid" color="primary" class="mr-4" @click="validate">Submit</v-btn>
           </v-form>
         </v-container>
       </main>
@@ -182,7 +182,7 @@ main {
   position: relative;
 
   .gradient-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     height: 100%;
     position: absolute;
     width: 100%;
@@ -215,6 +215,8 @@ main {
   font-size: 2.33rem;
   font-weight: 700;
   line-height: 1.125em;
+  text-align: center;
+  word-break: break-word;
 }
 
 .v-card__subtitle {
