@@ -65,7 +65,15 @@
           <section class="gradient-overlay"></section>
           <h2 class="text-center white--text">Let Us Help With Your Next Project</h2>
           <p class="text-center white--text mt-5">Drop us a line!</p>
-          <v-form ref="form" v-model="valid" name="contact" method="post" netlify lazy-validation>
+          <v-form
+            ref="form"
+            v-model="valid"
+            name="contact"
+            method="post"
+            value="contactform"
+            data-netlify="true"
+            lazy-validation
+          >
             <v-text-field
               class="white--text"
               v-model="name"
@@ -90,17 +98,8 @@
               name="message"
               required
             ></v-textarea>
-            <v-select
-              class="white--text"
-              v-model="select"
-              :items="items"
-              :rules="[v => !!v || 'Item is required']"
-              label="Request Type"
-              name="select"
-              required
-            ></v-select>
             <v-btn color="secondary" class="mr-4" @click="reset">Reset</v-btn>
-            <v-btn :disabled="!valid" color="primary" class="mr-4" @click="validate">Submit</v-btn>
+            <v-btn type="submit" :disabled="!valid" color="primary" class="mr-4">Submit</v-btn>
           </v-form>
         </v-container>
       </main>
@@ -125,9 +124,7 @@ export default {
       v =>
         (v && v.length <= 1000) ||
         'Your message must be less than 1000 characters. Please email us at company@email.com'
-    ],
-    select: null,
-    items: ['Item 1', 'Item 2', 'Item 3', 'Item 4']
+    ]
   }),
   methods: {
     validate() {
