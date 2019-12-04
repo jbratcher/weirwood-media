@@ -1,1 +1,143 @@
-﻿<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 800 400'><rect fill='#9b0000' width='800' height='400'/><defs><radialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='#d50000'/><stop offset='1' stop-color='#9b0000'/></radialGradient><linearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'><stop offset='0' stop-color='#ff5131' stop-opacity='0'/><stop offset='1' stop-color='#ff5131' stop-opacity='0.5'/></linearGradient></defs><rect fill='url(#a)' width='800' height='400'/><g fill-opacity='0.4'><circle fill='url(#b)' cx='267.5' cy='61' r='300'/><circle fill='url(#b)' cx='532.5' cy='61' r='300'/><circle fill='url(#b)' cx='400' cy='30' r='300'/></g></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="0 0 800 400"
+   version="1.1"
+   id="svg869"
+   sodipodi:docname="contact-form-background-rotated.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata873">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     id="namedview871"
+     showgrid="false"
+     inkscape:zoom="0.861875"
+     inkscape:cx="587.71146"
+     inkscape:cy="226.84687"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg869" />
+  <rect
+     width="800"
+     height="400"
+     id="rect845"
+     fill="#9b0000" />
+  <defs
+     id="defs857">
+    <radialGradient
+       id="a"
+       cx="396"
+       cy="281"
+       r="514"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#d50000"
+         id="stop847" />
+      <stop
+         offset="1"
+         stop-color="#9b0000"
+         id="stop849" />
+    </radialGradient>
+    <linearGradient
+       id="b"
+       gradientUnits="userSpaceOnUse"
+       x1="400"
+       y1="148"
+       x2="400"
+       y2="333">
+      <stop
+         offset="0"
+         stop-color="#ff5131"
+         stop-opacity="0"
+         id="stop852" />
+      <stop
+         offset="1"
+         stop-color="#ff5131"
+         stop-opacity="0.5"
+         id="stop854" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#b"
+       id="linearGradient4578"
+       gradientUnits="userSpaceOnUse"
+       x1="400"
+       y1="148"
+       x2="400"
+       y2="333" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#b"
+       id="linearGradient4580"
+       gradientUnits="userSpaceOnUse"
+       x1="400"
+       y1="148"
+       x2="400"
+       y2="333" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#b"
+       id="linearGradient4582"
+       gradientUnits="userSpaceOnUse"
+       x1="400"
+       y1="148"
+       x2="400"
+       y2="333" />
+  </defs>
+  <rect
+     width="800"
+     height="400"
+     id="rect859"
+     fill="url(#a)" />
+  <g
+     id="g867"
+     transform="matrix(1,0,0,-1,0,371)"
+     style="fill-opacity:0.4">
+    <path
+       style="fill:url(#linearGradient4578)"
+       d="m 567.5,61 a 300,300 0 0 1 -300,300 300,300 0 0 1 -300,-300 300,300 0 0 1 300,-300 300,300 0 0 1 300,300 z"
+       id="circle861"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:url(#linearGradient4580)"
+       d="m 832.5,61 a 300,300 0 0 1 -300,300 300,300 0 0 1 -300,-300 300,300 0 0 1 300,-300 300,300 0 0 1 300,300 z"
+       id="circle863"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:url(#linearGradient4582)"
+       d="M 700,30 A 300,300 0 0 1 400,330 300,300 0 0 1 100,30 300,300 0 0 1 400,-270 300,300 0 0 1 700,30 Z"
+       id="circle865"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

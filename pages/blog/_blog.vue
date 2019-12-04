@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-col>
-      <v-sheet class="ma-0" color="primary lighten-2" dark tile>
+      <v-sheet class="ma-0" color="secondary darken-2" dark tile>
         <h1 class="headline pa-2" display="headline">Blog > {{ blogPost.title }}</h1>
       </v-sheet>
       <article>
@@ -12,8 +12,8 @@
             width="1280"
             max-height="300"
           />
-          <v-card-title class="display-1">{{blogPost.title}}</v-card-title>
-          <v-card-subtitle class="subtitle-1">{{blogPost.description}}</v-card-subtitle>
+          <v-card-title>{{blogPost.title}}</v-card-title>
+          <v-card-subtitle>{{blogPost.description}}</v-card-subtitle>
           <v-card-text v-html="$md.render(blogPost.body)"></v-card-text>
         </v-card>
       </article>
@@ -35,5 +35,28 @@ export default {
 .col {
   margin: 0;
   padding: 0;
+}
+.v-card__title {
+  font-size: 2.33rem;
+  font-weight: 700;
+}
+.v-card__subtitle {
+  font-size: 1.25rem;
+}
+.v-card__text {
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .v-card__title {
+    font-size: 3rem;
+    margin: 2rem 0;
+  }
+  .v-card__subtitle {
+    font-size: 1.75rem;
+  }
+  .v-card__text {
+    margin: 4rem;
+    max-width: 70vw;
+  }
 }
 </style>

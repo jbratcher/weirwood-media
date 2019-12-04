@@ -53,16 +53,18 @@
 
         <!-- About Section -->
         <v-container id="about">
-          <h2 class="text-center">We care about providing cutting-edge, quality work</h2>
-          <p class="text-center">Crafting amazing software and web apps is our passion</p>
-          <p>We understand people and how they interact with screens. Our process builds blazingly fast, modern apps with user experience in mind from the ground up.</p>
+          <h2 class="text-center">Crafting user-optimized software is our passion</h2>
+          <p class="text-center">We care about delivering cutting-edge, quality work</p>
+          <p
+            class="px-12"
+          >We understand people and how they interact with screens. Our process builds blazingly fast, modern apps with user experience in mind from the ground up.</p>
         </v-container>
 
         <!-- Contact Section -->
         <v-container id="contact">
           <section class="gradient-overlay"></section>
           <h2 class="text-center white--text">Let Us Help With Your Next Project</h2>
-          <p class="text-center white--text">Drop us a line</p>
+          <p class="text-center white--text mt-5">Drop us a line!</p>
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field
               class="white--text"
@@ -152,24 +154,11 @@ h2 {
   z-index: 1;
 }
 
-p:first-of-type {
-  font-weight: 100;
-  font-size: 1.5rem;
-}
-
-main {
-  & > .container:nth-child(odd) {
-    background-color: #eee;
-    margin: 0;
-    min-width: 100%;
-    padding: 2rem;
-  }
-}
-
 // sections
 
 .container {
   min-height: 400px;
+  min-width: 100%;
   padding: 4rem 0;
 }
 
@@ -240,7 +229,7 @@ a {
 // contact section
 
 #contact {
-  background-image: url('/images/contact-form-background-rotated.svg');
+  background-image: url('/images/contact-form-background.svg');
   background-size: cover;
   background-position: center;
   min-width: 100%;
@@ -311,11 +300,6 @@ a {
 @media screen and (min-width: 768px) {
   h2 {
     font-size: 3.5rem;
-    letter-spacing: 0.25rem;
-  }
-
-  p:first-of-type {
-    font-size: 2.33rem;
   }
 
   // about section
@@ -361,6 +345,11 @@ a {
 
       & > .v-card__title {
         font-size: 2rem;
+      }
+
+      & > .v-card__text {
+        font-size: 1.25rem;
+        line-height: 1.5;
       }
     }
   }

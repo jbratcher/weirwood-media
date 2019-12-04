@@ -11,14 +11,16 @@
       prominent
       height="70px"
     >
-      <v-toolbar-title class="headline align-self-center">
+      <v-toolbar-title class="headline d-flex justify-center align-center align-self-center">
         <v-img
           class="align-center"
           alt="logo description"
-          src="/images/logo.png"
-          lazy-src="/images/logo.png"
-          width="200px"
+          src="/images/weirwood-media-logo.svg"
+          lazy-src="/images/weirwood-media-logo.svg"
+          height="45px"
+          width="55px"
         />
+        <p class="white--text ma-0 pl-2">Weirwood Media</p>
       </v-toolbar-title>
       <v-spacer />
       <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" />
@@ -46,7 +48,7 @@
       <nuxt />
     </v-content>
     <!-- Footer Area -->
-    <v-footer color="#484848" class="pa-0">
+    <v-footer color="secondary darken-2" class="pa-0">
       <v-row justify="center" no-gutters>
         <v-btn
           v-for="(link, i) in footerLinks"
@@ -56,7 +58,7 @@
           rounded
           class="my-2"
         >{{ link.title }}</v-btn>
-        <v-col class="black lighten-2 py-4 text-center white--text" cols="12">
+        <v-col class="primary py-4 text-center white--text" cols="12">
           {{ new Date().getFullYear() }} —
           <strong>Weirwood Media</strong>
         </v-col>
@@ -112,6 +114,11 @@ export default {
           icon: 'mdi-toolbox-outline',
           title: 'Services',
           to: '/services'
+        },
+        {
+          icon: 'mdi-folder-multiple',
+          title: 'Portfolio',
+          to: '/portfolio'
         },
         {
           icon: 'mdi-post',
@@ -170,7 +177,7 @@ body,
 
 header {
   .v-image__image {
-    filter: invert(1);
+    height: 50px;
   }
 }
 

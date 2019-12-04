@@ -4,7 +4,7 @@
     <v-container id="contact">
       <section class="gradient-overlay"></section>
       <h2 class="text-center white--text">Let Us Help With Your Next Project</h2>
-      <p class="text-center white--text">Drop us a line</p>
+      <p class="text-center white--text mt-5">Drop us a line!</p>
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field class="white--text" v-model="name" :rules="nameRules" label="Name" required></v-text-field>
         <v-text-field
