@@ -3,8 +3,7 @@
     <!-- Header Area -->
     <v-app-bar
       app
-      color="primary"
-      dark
+      color="black"
       elevate-on-scroll
       fixed
       hide-on-scroll
@@ -14,7 +13,7 @@
     >
       <v-toolbar-title class="headline align-self-center">
         <v-img
-          class="white--text align-center"
+          class="align-center"
           alt="logo description"
           src="/images/logo.png"
           lazy-src="/images/logo.png"
@@ -47,7 +46,7 @@
       <nuxt />
     </v-content>
     <!-- Footer Area -->
-    <v-footer color="primary" class="pa-0">
+    <v-footer color="rgb(30,30,30)" class="pa-0">
       <v-row justify="center" no-gutters>
         <v-btn
           v-for="(link, i) in footerLinks"
@@ -57,7 +56,7 @@
           rounded
           class="my-2"
         >{{ link.title }}</v-btn>
-        <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
+        <v-col class="black lighten-2 py-4 text-center white--text" cols="12">
           {{ new Date().getFullYear() }} —
           <strong>Company Name</strong>
         </v-col>
@@ -67,7 +66,7 @@
 </template>
 
 <script>
-import MenuLinks from '../components/MenuLinks.vue'
+import MenuLinks from '../components/MenuLinks.vue';
 
 export default {
   components: {
@@ -132,9 +131,9 @@ export default {
       ],
       miniVariant: false,
       title: 'Company Name'
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">

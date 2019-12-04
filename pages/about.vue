@@ -2,9 +2,9 @@
   <main>
     <!-- About Section -->
     <v-container id="about">
-      <h2 class="text-center">We are the best at what we do</h2>
-      <p class="text-center">We've been doing this since the year we were founded</p>
-      <p>My philosophy is basically this, and this is something I live by and I always have and I always will. Don't ever, for any reason, do anything, to anyone, for any reason, ever, no matter what, no matter where, or who, or who you are with, or where you are going, or where you've been, ever, for any reason whatsoever.</p>
+      <h2 class="text-center">We care about providing cutting-edge, quality work</h2>
+      <p class="text-center">Crafting amazing software and web apps is our passion</p>
+      <p>We understand people and how they interact with screens. Our process builds blazingly fast, modern applications with user experience in mind from the ground up.</p>
     </v-container>
   </main>
 </template>
@@ -12,7 +12,7 @@
 <script>
 export default {
   name: 'About'
-}
+};
 </script>
 
 <style lang="scss">

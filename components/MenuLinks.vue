@@ -1,7 +1,7 @@
 /* eslint-disable */
 <template>
   <!-- Links Wrapper -->
-  <v-list :class="listClass">
+  <v-list color="black" :class="listClass">
     <!-- General links -->
     <v-list-item
       v-for="(item, i) in generalLinks"
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'MenuLinks',
@@ -31,7 +31,7 @@ export default {
     generalLinks: {
       type: Array,
       default() {
-        return []
+        return [];
       }
     },
     listClass: {
@@ -43,7 +43,7 @@ export default {
       default: ''
     }
   }
-}
+};
 </script>
 
 <style>

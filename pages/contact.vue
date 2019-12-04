@@ -48,15 +48,15 @@ export default {
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
-        this.snackbar = true
+        this.snackbar = true;
       }
     },
     reset() {
-      this.$refs.form.reset()
-      this.$refs.form.resetValidation()
+      this.$refs.form.reset();
+      this.$refs.form.resetValidation();
     }
   }
-}
+};
 </script>
 
 <style lang="scss">

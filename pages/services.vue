@@ -12,18 +12,18 @@
         <v-container class="grid-3-1">
           <v-card>
             <v-icon class="benefits-icon" color="primary lighten-2">mdi-toolbox-outline</v-icon>
-            <v-card-title>1st Service</v-card-title>
-            <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+            <v-card-title>Application Development</v-card-title>
+            <v-card-text>Have a great idea but not sure how to implement it? Let us show you all the modern options available and what is the best fit for your use case.</v-card-text>
           </v-card>
           <v-card>
             <v-icon class="benefits-icon" color="primary">mdi-email-send</v-icon>
-            <v-card-title>2nd Service</v-card-title>
-            <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+            <v-card-title>Web Development</v-card-title>
+            <v-card-text>Get your idea online and portable. Our solutions cater to exactly what you need depending on what you want. Let us create universal, fast website or application for you.</v-card-text>
           </v-card>
           <v-card>
             <v-icon class="benefits-icon" color="primary darken-2">mdi-account-supervisor</v-icon>
-            <v-card-title>3rd Service</v-card-title>
-            <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+            <v-card-title>Social Media Integration</v-card-title>
+            <v-card-text>Make your internet presence known and stand out with our social media management service.</v-card-text>
           </v-card>
         </v-container>
       </v-row>
@@ -34,7 +34,7 @@
 <script>
 export default {
   name: 'Services'
-}
+};
 </script>
 
 <style lang="scss">

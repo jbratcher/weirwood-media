@@ -14,34 +14,12 @@
             cover
           >
             <section class="gradient-overlay"></section>
-            <h2 class="text-center">Witty headline</h2>
-            <p class="subtitle white--text text-center">A subtitle to expand on the headline.</p>
+            <v-sheet>
+              <h2 class="text-center white--text">Web &amp; Application Development</h2>
+              <p class="subtitle text-center white--text">Let's make your ideas a reality.</p>
+            </v-sheet>
             <v-btn color="white" outlined>View Our Portfolio</v-btn>
           </v-img>
-        </v-container>
-
-        <!-- Client List Section -->
-        <v-container id="clients">
-          <h2 class="text-light text-center">Look At All Our Clients</h2>
-          <v-sheet>
-            <v-slide-group v-model="sliderModel" class="pa-4" center-active show-arrows>
-              <v-slide-item v-for="n in 9" :key="n" v-slot:default="{ active, toggle }">
-                <v-card
-                  :color="active ? 'primary' : 'grey lighten-1'"
-                  class="ma-4"
-                  height="100"
-                  width="200"
-                  @click="toggle"
-                >
-                  <v-row class="fill-height" align="start" justify="end">
-                    <v-scale-transition>
-                      <v-icon v-if="active" class="mt-2 mr-4" color="white" size="24"></v-icon>
-                    </v-scale-transition>
-                  </v-row>
-                </v-card>
-              </v-slide-item>
-            </v-slide-group>
-          </v-sheet>
         </v-container>
 
         <!-- Benefits Section -->
@@ -56,18 +34,18 @@
             <v-container class="grid-3-1">
               <v-card>
                 <v-icon class="benefits-icon" color="primary lighten-2">mdi-toolbox-outline</v-icon>
-                <v-card-title>1st Service</v-card-title>
-                <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+                <v-card-title>Application Development</v-card-title>
+                <v-card-text>Have a great idea but not sure how to implement it? Let us show you all the modern options available and what is the best fit for your use case.</v-card-text>
               </v-card>
               <v-card>
                 <v-icon class="benefits-icon" color="primary">mdi-email-send</v-icon>
-                <v-card-title>2nd Service</v-card-title>
-                <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+                <v-card-title>Web Development</v-card-title>
+                <v-card-text>Get your idea online and portable. Our solutions cater to exactly what you need depending on what you want. Let us create universal, fast website or application for you.</v-card-text>
               </v-card>
               <v-card>
                 <v-icon class="benefits-icon" color="primary darken-2">mdi-account-supervisor</v-icon>
-                <v-card-title>3rd Service</v-card-title>
-                <v-card-text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</v-card-text>
+                <v-card-title>Social Media Integration</v-card-title>
+                <v-card-text>Make your internet presence known and stand out with our social media management service.</v-card-text>
               </v-card>
             </v-container>
           </v-row>
@@ -75,9 +53,9 @@
 
         <!-- About Section -->
         <v-container id="about">
-          <h2 class="text-center">We are the best at what we do</h2>
-          <p class="text-center">We've been doing this since the year we were founded</p>
-          <p>My philosophy is basically this, and this is something I live by and I always have and I always will. Don't ever, for any reason, do anything, to anyone, for any reason, ever, no matter what, no matter where, or who, or who you are with, or where you are going, or where you've been, ever, for any reason whatsoever.</p>
+          <h2 class="text-center">We care about providing cutting-edge, quality work</h2>
+          <p class="text-center">Crafting amazing software and web apps is our passion</p>
+          <p>We understand people and how they interact with screens. Our process builds blazingly fast, modern applications with user experience in mind from the ground up.</p>
         </v-container>
 
         <!-- Contact Section -->
@@ -105,14 +83,13 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Logo from '~/components/Logo.vue';
 
 export default {
   components: {
     Logo
   },
   data: () => ({
-    sliderModel: null,
     valid: true,
     name: '',
     nameRules: [v => !!v || 'Name is required'],
@@ -134,12 +111,12 @@ export default {
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
-        this.snackbar = true
+        this.snackbar = true;
       }
     },
     reset() {
-      this.$refs.form.reset()
-      this.$refs.form.resetValidation()
+      this.$refs.form.reset();
+      this.$refs.form.resetValidation();
     }
   },
   head() {
@@ -147,9 +124,9 @@ export default {
       script: [
         { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }
       ]
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
@@ -191,20 +168,8 @@ main {
     justify-content: space-evenly;
     position: relative;
   }
-}
-
-// client section
-
-#clients {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  justify-content: space-evenly;
-  min-width: 100%;
   .v-sheet {
-    background: none;
-    width: 90vw;
+    background: transparent;
   }
 }
 
@@ -213,6 +178,7 @@ main {
 #benefits {
   background-image: url('/images/background.svg');
   background-size: cover;
+  min-width: 100%;
   position: relative;
 
   .gradient-overlay {
@@ -289,7 +255,8 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    justify-content: flex-start;
     margin-bottom: 2rem;
     padding: 1rem 0;
     & > .v-icon {
@@ -300,7 +267,8 @@ a {
 
 @media screen and (min-width: 768px) {
   h2 {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
+    letter-spacing: 0.25rem;
   }
 
   p:first-of-type {
@@ -321,8 +289,9 @@ a {
     }
 
     h2 {
-      font-size: 4.5rem;
+      font-size: 3rem;
       font-weight: 700;
+      line-height: 1;
     }
 
     & > p:first-of-type {
@@ -334,10 +303,9 @@ a {
   // Benefits Icons Grid
 
   .grid-3-1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    justify-content: space-evenly;
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     max-width: 100%;
 
     & > .v-card {
