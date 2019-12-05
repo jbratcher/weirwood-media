@@ -4,11 +4,10 @@
     <v-container id="benefits">
       <v-row>
         <v-col class="text-center">
-          <h2 class="text-light white--text">Services</h2>
+          <h2>Services</h2>
         </v-col>
       </v-row>
       <v-row>
-        <section class="gradient-overlay"></section>
         <v-container class="grid-3-1">
           <v-card>
             <v-icon class="benefits-icon" color="secondary lighten-2">mdi-toolbox-outline</v-icon>

@@ -16,12 +16,21 @@ export default {
 </script>
 
 <style lang="scss">
-main.about-page .container p:first-of-type {
-  font-size: 1.25rem;
+main.about-page {
+  margin: 0 auto;
+  .container {
+    padding: 4rem 1.5rem;
+    line-height: 1.125;
+    p:first-of-type {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
 }
 @media screen and (min-width: 768px) {
   main.about-page {
-    margin: 0 auto;
     width: 70vw;
     .container {
       p:first-of-type {

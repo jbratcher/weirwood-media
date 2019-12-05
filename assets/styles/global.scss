@@ -1,0 +1,350 @@
+// global styles
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+.v-application {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 16px;
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+// theme overides
+
+.theme--light.v-application {
+    background-color: #fff;
+}
+
+.theme--dark.v-sheet {
+    background-color: transparent;
+}
+
+.v-navigation-drawer.v-navigation-drawer--fixed {
+    z-index: 100;
+}
+
+.v-application a {
+    color: #fff !important;
+}
+
+header {
+
+    .v-image__image {
+        height: 50px;
+    }
+
+}
+
+.v-list-item.row-menu {
+    flex: 1 1 0;
+}
+
+.v-card .v-card__title {
+    word-break: break-word;
+}
+
+//** Main Content **//
+
+h2 {
+    font-size: 2.33rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.v-image {
+
+    h2,
+    p,
+    .v-btn__content {
+        text-shadow: 2px 2px 4px black;
+    }
+}
+
+.image-text p {
+    font-size: 1.75rem;
+}
+
+// sections
+
+.container {
+    min-height: 400px;
+    min-width: 100%;
+    padding: 4rem 0;
+}
+
+// hero section
+
+#hero {
+    height: 375px;
+
+    .v-responsive__content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-evenly;
+        position: relative;
+    }
+
+    .v-sheet {
+        background: transparent;
+    }
+}
+
+// benefits section
+
+#benefits {
+    min-width: 100%;
+    position: relative;
+
+    .gradient-overlay {
+        background-color: rgba(200, 200, 200, 0.3);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        top: 0;
+        left: 0;
+    }
+
+    // Benefit Icons Grid
+
+    .grid-3-1 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 99;
+
+        &>.v-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            justify-content: flex-start;
+            margin-bottom: 2rem;
+            max-width: 85vw;
+            padding: 1rem 0;
+
+            .v-card:hover {
+                cursor: pointer;
+            }
+
+            &>.v-icon {
+                font-size: 4rem;
+            }
+        }
+    }
+}
+
+// about section
+
+#about {
+    background-image: url('/images/background.svg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    padding: 4rem 2rem;
+    position: relative;
+
+    .gradient-overlay {
+        background-color: rgba(200, 200, 200, 0.3);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        top: 0;
+        left: 0;
+    }
+
+    &>h2,
+    p {
+        margin: 1rem 0;
+    }
+
+    p {
+        position: relative;
+    }
+
+    p:first-of-type {
+        margin: 0 0 1rem;
+        font-size: 1.25rem;
+    }
+}
+
+.v-card__title {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 2.33rem;
+    font-weight: 700;
+    line-height: 1.125em;
+    text-align: center;
+    word-break: break-word;
+}
+
+.v-card__subtitle {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1.33rem;
+}
+
+a {
+    font-weight: bold;
+    color: #526488;
+}
+
+// contact section
+
+#contact {
+    background-image: url('/images/contact-form-background.svg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+    padding: 4rem 2rem;
+    position: relative;
+
+    .gradient-overlay {
+        background-color: rgba(255, 255, 255, 0.1);
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: 0;
+        top: 0;
+        left: 0;
+    }
+
+    p:first-of-type {
+        position: relative;
+    }
+
+    form {
+        background: #fff;
+        border-radius: 0.25rem;
+        padding: 1rem;
+        position: relative;
+        width: 80vw;
+    }
+}
+
+.gradient-overlay {
+    background-image: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.6));
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.text-light {
+    font-weight: 100;
+}
+
+@media screen and (min-width: 768px) {
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    .image-text p {
+        font-size: 1.75rem;
+    }
+
+    // Benefits section
+
+    #benefits {
+        padding: 2rem 0;
+
+        .row:nth-of-type(2) {
+            max-width: 90vw;
+            margin: 0 auto;
+        }
+
+        // Benefits Icons Grid
+
+        .grid-3-1 {
+            align-items: stretch;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            &>.v-card {
+                margin-bottom: unset;
+                margin: 0 2rem;
+
+                &>.v-icon {
+                    font-size: 8rem;
+                }
+
+                &>.v-card__title {
+                    font-size: 2rem;
+                }
+
+                &>.v-card__text {
+                    font-size: 1.25rem;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+
+    // about section
+
+    #about {
+        min-height: 400px;
+        padding: 4rem;
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        &>p:first-of-type {
+            font-size: 1.75rem;
+            margin: 0 0 3rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+    }
+
+    // contact section
+
+    #contact {
+
+        h2 {
+            font-size: 3rem;
+            padding: 0 10vw;
+        }
+
+        p:first-of-type {
+            font-size: 2rem;
+        }
+
+        form {
+            background: #fff;
+            margin: 4rem auto;
+            padding: 4rem;
+            width: 50vw;
+        }
+
+    }
+}

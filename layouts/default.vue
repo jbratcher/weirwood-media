@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="white">
     <!-- Header Area -->
     <v-app-bar
       app
@@ -23,7 +23,7 @@
         <p class="white--text ma-0 pl-2">Weirwood Media</p>
       </v-toolbar-title>
       <v-spacer />
-      <v-app-bar-nav-icon class="hidden-md-and-up" @click.stop="drawer = !drawer" />
+      <v-app-bar-nav-icon color="white" class="hidden-md-and-up" @click.stop="drawer = !drawer" />
       <!-- tablet/desktop header navigation -->
       <MenuLinks
         :general-links="generalLinks"
@@ -56,6 +56,8 @@
           color="white"
           text
           rounded
+          nuxt
+          :to="link.to"
           class="my-2"
         >{{ link.title }}</v-btn>
         <v-col class="primary py-4 text-center white--text" cols="12">
@@ -84,24 +86,24 @@ export default {
           to: '/'
         },
         {
-          title: 'About Us',
-          to: '/'
-        },
-        {
-          title: 'Team',
-          to: '/'
-        },
-        {
           title: 'Services',
-          to: '/'
+          to: '/services'
+        },
+        {
+          title: 'Portfolio',
+          to: '/portfolio'
         },
         {
           title: 'Blog',
-          to: '/'
+          to: '/blog'
         },
         {
-          title: 'Contact Us',
-          to: '/'
+          title: 'About Us',
+          to: '/about'
+        },
+        {
+          title: 'Contact ',
+          to: '/contact'
         }
       ],
       generalLinks: [
@@ -144,83 +146,4 @@ export default {
 </script>
 
 <style lang="scss">
-.theme--light.v-sheet,
-.v-application .black {
-  border-bottom-color: pink;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html,
-body,
-.v-application {
-  font-family: 'Libre Franklin', sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
-.v-application a {
-  color: #fff !important;
-}
-
-header {
-  .v-image__image {
-    height: 50px;
-  }
-}
-
-.v-list-item.row-menu {
-  flex: 1 1 0;
-}
-
-.v-card__title {
-  word-break: break-word;
-}
-
-.text-shadow {
-  text-shadow: 2px 2px 4px #000;
-}
-
-.box-shadow-1 {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
-}
-
-.theme--dark.v-sheet {
-  background-color: transparent;
-}
-
-.btn-box-shadow-primary {
-  box-shadow: 0 0 8px rgba(0, 121, 107, 0.8);
-
-  &:hover {
-    box-shadow: none;
-    transition: all 0.5s ease;
-  }
-}
-
-.btn-box-shadow-secondary {
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-
-  &:hover {
-    box-shadow: none;
-    transition: all 0.5s ease;
-  }
-}
-
-.justify-space-evenly {
-  justify-content: space-around;
-  justify-content: space-evenly;
-}
 </style>
