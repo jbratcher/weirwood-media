@@ -1,4 +1,4 @@
-# Wwirwood Media
+# Weirwood Media
 
 ## A digital media company specialing in user experience
 

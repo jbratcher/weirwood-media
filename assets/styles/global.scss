@@ -34,6 +34,11 @@ body,
 
 .v-navigation-drawer.v-navigation-drawer--fixed {
     z-index: 100;
+
+    .v-icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
 }
 
 .v-application a {
@@ -44,6 +49,10 @@ header {
 
     .v-image__image {
         height: 50px;
+    }
+
+    .v-btn--icon.v-size--default .v-icon {
+        font-size: 48px;
     }
 
 }
